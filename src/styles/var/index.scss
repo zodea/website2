@@ -1,0 +1,15 @@
+@import "../color.scss";
+@import "./for.scss";
+$max-width: 720px;
+
+$billboard-z-index: 30;
+$layout-header-z-indexMax: 500;
+
+$title-EN-font-size: 40px;
+$title-ZH-font-size: 30px;
+$title-ZH-color: $primary-color;
+
+$photo-title-ZH-font-size: 30px;
+$photo-title-EN-font-size: 12px;
+
+$normal-left: 12.5%;
