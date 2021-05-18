@@ -1,7 +1,7 @@
 <template>
   <header :class="{ virtual: virtual && hasOverHeight }" class="NavBar">
     <div class="left">
-      <img class="company-logo" src="" alt="logo" />
+      <img class="company-logo" src="#" alt="三川田" />
     </div>
     <div class="right">
       <Menu :attr="virtual && hasOverHeight" />
@@ -71,6 +71,11 @@ export default {
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
+}
+
+.company-logo {
+  width: 216px;
+  height: 40px;
 }
 
 .virtual {
