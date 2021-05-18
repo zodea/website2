@@ -1,9 +1,16 @@
+import Layout from "@/layout/index.vue";
 import Vue from "vue";
 import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const routes = [];
+const routes = [
+  {
+    path: "/",
+    name: "Layout",
+    component: Layout,
+  },
+];
 
 const router = new VueRouter({
   mode: "history",

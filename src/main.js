@@ -5,6 +5,7 @@ import App from "./App.vue";
 import "./components/element";
 import router from "./router";
 import store from "./store";
+import "./styles/index.scss";
 
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
