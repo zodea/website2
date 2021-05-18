@@ -1,7 +1,7 @@
 <template>
   <header :class="{ virtual: virtual && hasOverHeight }" class="NavBar">
     <div class="left">
-      <img src="" alt="logo" />
+      <img class="company-logo" src="" alt="logo" />
     </div>
     <div class="right">
       <Menu :attr="virtual && hasOverHeight" />
@@ -17,21 +17,22 @@ export default {
   name: "NavBar",
   props: {
     virtual: {
+      // 头部是否可虚化
       type: Boolean,
       default: true,
     },
     maxTop: {
+      // 头部最大的虚化高度
       type: Number,
       default: 880,
     },
   },
   data() {
     return {
-      hasOverHeight: true,
+      hasOverHeight: true, // 是否超出需要虚化的高度
     };
   },
   components: { Menu },
-  watch: {},
   beforeMount() {
     window.addEventListener("scroll", this.$_scrollHeader);
   },
@@ -42,7 +43,12 @@ export default {
   methods: {
     $_scrollHeader() {
       const screenHeight =
-        document.documentElement.scrollTop || document.body.scrollTop;
+        document.documentElement.scrollTop || document.body.scrollTop; // 获取滚动的垂直方向上的位移
+      const scrollLeft = Math.max(
+        document.body.scrollLeft,
+        document.documentElement.scrollLeft
+      ); // 获取滚动的水平方向上的位移
+      document.querySelector(".NavBar").style.left = `-${scrollLeft}px`;
       if (screenHeight > this.maxTop) {
         this.hasOverHeight = false;
       } else {
@@ -56,17 +62,15 @@ export default {
 <style lang="scss" scoped>
 .NavBar {
   position: fixed;
-  // z-index: $layout-header-z-indexMax;
+  z-index: $layout-header-z-indexMax;
   display: flex;
-  width: 100vw;
-  padding: 0 10%;
+  height: 80px;
+  min-width: $min-width;
+  padding: 0 $normal-left;
   background-color: #fff;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  // @media screen and (max-width: 720px) {
-  //   padding: 0;
-  // }
 }
 
 .virtual {

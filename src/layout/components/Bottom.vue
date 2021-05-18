@@ -43,12 +43,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("../style/index.scss");
-
 .footer {
   width: 100%;
   height: 200px;
-  // padding: 0 $normal-left;
+  padding: 0 $normal-left;
   font-size: 16px;
   color: #fff;
   background-color: #404040;

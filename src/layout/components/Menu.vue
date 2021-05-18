@@ -53,12 +53,12 @@ export default {
 }
 
 .el-menu--horizontal > .el-menu-item.is-active {
-  // border-bottom-color: $primary-color !important;
+  border-bottom-color: $primary-color !important;
 }
 
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover {
   background-color: inherit;
-  // border-bottom: 2px solid $primary-color !important;
+  border-bottom: 2px solid $primary-color !important;
 }
 </style>
